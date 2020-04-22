@@ -8,6 +8,7 @@
     "type-check": "tsc"
   },
   "dependencies": {
+    "@types/theme-ui": "^0.3.1",
     "framer-motion": "^1.10.3",
     "isomorphic-unfetch": "3.0.0",
     "next": "latest",
