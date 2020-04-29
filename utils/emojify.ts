@@ -1,9 +1,5 @@
-import emojiList from './food-emojis'
-
-type Emoji = {
-  emoji: string,
-  ingredient: string,
-}
+import emojiList from './food-emojis';
+import { Emoji } from '../interfaces'
 
 const regexps = [/(,\s+(and)\s+)/, /([\.,]\s+(Topped With)\s+)/, /(\s+(Topped with)\s+)/];
 
@@ -24,14 +20,14 @@ function matchItemToEmoji(item: string): Emoji | null {
           ingredient: item,
         }
 
-        return emojiMatch
+        return emojiMatch;
       }
     }
   }
-  return null
+  return null;
 }
 
-export default function emojify(menu: string): Emoji[] {
+export function emojify(menu: string): Emoji[] {
   const emojis: Emoji[] = [];
   const items = transform(menu);
 
@@ -42,5 +38,5 @@ export default function emojify(menu: string): Emoji[] {
       emojis.push(emoji);
     }
   }
-  return emojis
+  return emojis;
 }
