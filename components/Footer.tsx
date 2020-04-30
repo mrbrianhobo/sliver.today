@@ -5,6 +5,11 @@ const Footer: React.FC = () => {
   return (
     <Flex
       sx={{
+        position: "fixed",
+        bottom: 0,
+        left: 0,
+        right: 0,
+        height: "50px",
         justifyContent: "center",
       }}
     >
