@@ -6,11 +6,18 @@ const NavBar: React.FC = () => {
     <Flex 
       p={2}
       sx={{
-        justifyContent: "center"
+        height: "65px",
+        border: "1px solid #DEDEDE",
+        justifyContent: "center",
+        alignItems: "center"
       }}
     >
-      <Heading>
-        sliver.today
+      <Heading
+        sx={{
+          fontWeight: 400,
+        }}
+      >
+        🍕 sliver.today
       </Heading>
     </Flex>
   )

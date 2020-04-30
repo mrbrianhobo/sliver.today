@@ -1,26 +1,55 @@
 import * as React from 'react';
-import { Flex } from "theme-ui";
+import { Flex, Text } from "theme-ui";
 
 type EmojiProps = {
   emojis?: string[]
 }
 
-const EmojiGrid: React.FC<EmojiProps> = () => {
+const EmojiBox: React.FC = () => {
   return (
-    <Flex 
-      p={1}
+    <Flex
+      m={"4px"}
       sx={{
-        justifyContent: "center"
-      }}
+        height: "80px",
+        width: "80px",
+        background: "#F3F3F3",
+        borderRadius: "24px",
+        justifyContent: "center",
+        alignItems: "center"
+      }} 
     >
-      <Flex>🍅</Flex>
-      <Flex>🍅</Flex>
-      <Flex>🍅</Flex>
-      <Flex>🍅</Flex>
+      <Text
+        sx={{
+          fontSize: "30px"
+        }}
+      >
+        🍅
+      </Text>
     </Flex>
   )
 }
 
-
+const EmojiGrid: React.FC<EmojiProps> = () => {
+  return (
+    <Flex 
+      p={16}
+      sx={{
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center"
+      }}
+    > 
+      <Flex>
+        <EmojiBox />
+        <EmojiBox />
+      </Flex>
+      <Flex>
+        <EmojiBox />
+        <EmojiBox />
+      </Flex>
+      
+    </Flex>
+  )
+}
   
 export default EmojiGrid;

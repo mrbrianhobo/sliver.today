@@ -1,9 +1,18 @@
 export default {
   fonts: {
-    body: 'system-ui, sans-serif',
-    heading: 'system-ui, sans-serif',
-    monospace: 'Menlo, monospace',
+    body: 'Inconsolata, monospace',
+    heading: 'Inter, sans-serif',
+    monospace: 'Inconsolata, monospace',
   },
+  fontWeights: {
+    light: 300,
+    body: 400,
+    semi: 600,
+    bold: 700,
+  },
+  fontSizes: [
+    12, 14, 16, 20, 24, 32, 48, 64,
+  ],
   colors: {
     text: '#000',
     background: '#fff',

@@ -5,6 +5,8 @@ import { emojify } from '../utils/emojify';
 import NavBar from '../components/NavBar';
 import PizzaCard from '../components/PizzaCard';
 import { Flex } from 'theme-ui';
+import ButtonGroup from '../components/ButtonGroup';
+import Footer from '../components/Footer';
 
 type Props = {
   pizzas: Locations
@@ -16,6 +18,7 @@ const IndexPage: NextPage<Props> = ({ pizzas }) => {
     <div>
       <NavBar />
       <Flex
+        m={16}
         p={16}
         sx={{
           justifyContent: 'center'
@@ -23,7 +26,14 @@ const IndexPage: NextPage<Props> = ({ pizzas }) => {
       >
         <PizzaCard />
       </Flex>
-      {/* <div>Pizzas: {JSON.stringify(pizzas)}</div> */}
+      <Flex
+        sx={{
+          justifyContent: 'center'
+        }}
+      >
+        <ButtonGroup />
+      </Flex>
+      <Footer />
     </div>
   )
 }
