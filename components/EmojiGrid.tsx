@@ -1,11 +1,14 @@
 import * as React from 'react';
 import { Flex, Text } from "theme-ui";
+import { Emoji } from '../interfaces';
 
 type EmojiProps = {
-  emojis?: string[]
+  emojis: Emoji[]
 }
 
-const EmojiBox: React.FC = () => {
+const EmojiBox: React.FC<{
+  emoji: Emoji
+}> = ({ emoji }) => {
   return (
     <Flex
       m={"4px"}
@@ -23,13 +26,13 @@ const EmojiBox: React.FC = () => {
           fontSize: "30px"
         }}
       >
-        🍅
+        {emoji.emoji}
       </Text>
     </Flex>
   )
 }
 
-const EmojiGrid: React.FC<EmojiProps> = () => {
+const EmojiGrid: React.FC<EmojiProps> = ({ emojis }) => {
   return (
     <Flex 
       p={16}
@@ -40,12 +43,12 @@ const EmojiGrid: React.FC<EmojiProps> = () => {
       }}
     > 
       <Flex>
-        <EmojiBox />
-        <EmojiBox />
+        <EmojiBox emoji={emojis[0]} />
+        <EmojiBox emoji={emojis[1]} />
       </Flex>
       <Flex>
-        <EmojiBox />
-        <EmojiBox />
+        <EmojiBox emoji={emojis[2]} />
+        <EmojiBox emoji={emojis[3]} />
       </Flex>
       
     </Flex>

@@ -1,14 +1,18 @@
 import * as React from 'react';
 import { Card, Text, Heading } from 'theme-ui';
 import EmojiGrid from './EmojiGrid';
+import { getDate } from '../utils/getDate';
+import { Pizza } from '../interfaces';
 
-const PizzaCard: React.FC = () => {
-	// const { theme } = useThemeUI();
+const PizzaCard: React.FC<{
+	selected: Pizza
+}> = ({ selected }) => {
   return (
 		<Card
 			p={16}
 			sx={{
 				width: "290px",
+				height: "400px",
 			}}
 		>
 			<Heading
@@ -17,9 +21,9 @@ const PizzaCard: React.FC = () => {
 					textAlign: "center"
 				}}
 			>
-				📅 Monday
+				📅 {getDate()}
 			</Heading>
-			<EmojiGrid />
+			<EmojiGrid emojis={selected.emojis}/>
 			<Heading
 				as="h4"
 				sx={{
@@ -28,12 +32,8 @@ const PizzaCard: React.FC = () => {
 			>
 				🍕 Today's Pizza
 			</Heading>
-			<Text
-				sx={{
-					// fontFamily: `${theme.fonts.body}`
-				}}
-			>
-				Roasted Yukon Gold Potatoes, Baby Spinach Mixed Caramelized Onions, Mozzarella, Aged Sharp Cheddar Cheese, Fresh Herbs, Infused Thyme Garlic Olive Oil.
+			<Text>
+				{selected.menu}
   		</Text>
 		</Card>
 	)

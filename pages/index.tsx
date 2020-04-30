@@ -7,13 +7,29 @@ import PizzaCard from '../components/PizzaCard';
 import { Flex } from 'theme-ui';
 import ButtonGroup from '../components/ButtonGroup';
 import Footer from '../components/Footer';
+import { useState } from 'react';
 
 type Props = {
   pizzas: Locations
+  current: Pizza
 }
 
-const IndexPage: NextPage<Props> = ({ pizzas }) => {
-  {console.log(pizzas)}
+const IndexPage: NextPage<Props> = ({ pizzas, current }) => {
+  const [pizza, setPizza] = useState(current);
+
+  const updatePizza = (location: string) => {
+    switch (location) {
+      case "Telegraph":
+        setPizza(pizzas.telegraph);
+        break;
+      case "Shattuck":
+        setPizza(pizzas.shattuck);
+        break;
+      case "Broadway":
+        setPizza(pizzas.broadway);
+    }
+  }
+
   return (
     <div>
       <NavBar />
@@ -24,14 +40,16 @@ const IndexPage: NextPage<Props> = ({ pizzas }) => {
           justifyContent: 'center'
         }}
       >
-        <PizzaCard />
+        <PizzaCard selected={pizza} />
       </Flex>
       <Flex
         sx={{
           justifyContent: 'center'
         }}
       >
-        <ButtonGroup />
+        <ButtonGroup 
+          onClick={location => updatePizza(location)}
+        />
       </Flex>
       <Footer />
     </div>
@@ -69,7 +87,7 @@ IndexPage.getInitialProps = async () => {
     broadway: broadway,
   }
 
-  return { pizzas: pizzas }
+  return { pizzas: pizzas, current: pizzas.telegraph }
 }
 
 export default IndexPage;
