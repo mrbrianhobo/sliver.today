@@ -1,5 +1,12 @@
+export enum Location {
+  Telegraph = "Telegraph",
+  Shattuck = "Shattuck",
+  Broadway = "Broadway",
+}
+
 export type Pizza = {
   // day: string
+  location: Location
   menu: string
   emojis: Emoji[]
 }

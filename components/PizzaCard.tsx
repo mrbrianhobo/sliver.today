@@ -1,8 +1,8 @@
-import * as React from 'react';
+import React from 'react';
 import { Card, Text, Heading } from 'theme-ui';
-import EmojiGrid from './EmojiGrid';
-import { getDate } from '../utils/getDate';
 import { Pizza } from '../interfaces';
+import { getDate } from '../utils/getDate';
+import EmojiGrid from './EmojiGrid';
 
 const PizzaCard: React.FC<{
 	selected: Pizza
@@ -12,7 +12,7 @@ const PizzaCard: React.FC<{
 			p={16}
 			sx={{
 				width: "290px",
-				height: "400px",
+				height: "425px",
 			}}
 		>
 			<Heading
@@ -23,6 +23,16 @@ const PizzaCard: React.FC<{
 			>
 				📅 {getDate()}
 			</Heading>
+      <Heading
+        as="h4"
+        sx={{
+          fontFamily: "Inconsolata",
+          fontWeight: 400,
+          textAlign: "center"
+        }}
+      >
+        {selected.location}
+      </Heading>
 			<EmojiGrid emojis={selected.emojis}/>
 			<Heading
 				as="h4"

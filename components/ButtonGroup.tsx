@@ -1,7 +1,7 @@
 import React from 'react';
 import { Flex } from 'theme-ui'
+import { Location } from '../interfaces';
 import Button from "./Button";
-// import { Pizza } from '../interfaces';
 
 const ButtonGroup: React.FC<{
   onClick: (location: string) => void;
@@ -9,9 +9,9 @@ const ButtonGroup: React.FC<{
   return (
     <Flex
     >
-      <Button onClick={onClick} location="Shattuck" />
-      <Button onClick={onClick} location="Telegraph"/>
-      <Button onClick={onClick} location="Broadway" />
+      <Button onClick={onClick} location={Location.Shattuck} />
+      <Button onClick={onClick} location={Location.Telegraph}/>
+      <Button onClick={onClick} location={Location.Broadway} />
     </Flex>
   )
 }

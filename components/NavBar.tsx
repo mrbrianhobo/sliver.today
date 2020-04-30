@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { Flex, Heading } from 'theme-ui';
 
 const NavBar: React.FC = () => {
@@ -22,6 +22,5 @@ const NavBar: React.FC = () => {
     </Flex>
   )
 }
-
 
 export default NavBar;

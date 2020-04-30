@@ -1,5 +1,5 @@
+import { Emoji } from '../interfaces';
 import emojiList from './food-emojis';
-import { Emoji } from '../interfaces'
 
 const regexps = [/(,\s+(and)\s+)/, /([\.,]\s+(Topped With)\s+)/, /(\s+(Topped with)\s+)/];
 

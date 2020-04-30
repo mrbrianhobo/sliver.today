@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { Button as ThemeButton } from 'theme-ui'
 
 // const noop = (): void => {console.log("clicked")};

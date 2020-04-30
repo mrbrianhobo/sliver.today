@@ -1,31 +1,30 @@
 // import fetch from 'isomorphic-unfetch';
+import { useState } from 'react';
 import { NextPage } from 'next';
-import { Pizza, Locations } from '../interfaces';
+import { Flex } from 'theme-ui';
+import { Pizza, Locations, Location } from '../interfaces';
 import { emojify } from '../utils/emojify';
 import NavBar from '../components/NavBar';
 import PizzaCard from '../components/PizzaCard';
-import { Flex } from 'theme-ui';
 import ButtonGroup from '../components/ButtonGroup';
 import Footer from '../components/Footer';
-import { useState } from 'react';
 
 type Props = {
   pizzas: Locations
-  current: Pizza
 }
 
-const IndexPage: NextPage<Props> = ({ pizzas, current }) => {
-  const [pizza, setPizza] = useState(current);
+const IndexPage: NextPage<Props> = ({ pizzas }) => {
+  const [pizza, setPizza] = useState(pizzas.telegraph);
 
   const updatePizza = (location: string) => {
     switch (location) {
-      case "Telegraph":
+      case Location.Telegraph:
         setPizza(pizzas.telegraph);
         break;
-      case "Shattuck":
+      case Location.Shattuck:
         setPizza(pizzas.shattuck);
         break;
-      case "Broadway":
+      case Location.Broadway:
         setPizza(pizzas.broadway);
     }
   }
@@ -67,16 +66,19 @@ IndexPage.getInitialProps = async () => {
   const broadwayMenu = json.pizzas[2].pizza;
 
   const telegraph: Pizza = {
+    location: Location.Telegraph,
     menu: telegraphMenu,
     emojis: emojify(telegraphMenu),
   }
 
   const shattuck: Pizza = {
+    location: Location.Shattuck,
     menu: shattuckMenu,
     emojis: emojify(shattuckMenu),
   }
 
   const broadway: Pizza = {
+    location: Location.Broadway,
     menu: broadwayMenu,
     emojis: emojify(broadwayMenu)
   }
@@ -87,7 +89,7 @@ IndexPage.getInitialProps = async () => {
     broadway: broadway,
   }
 
-  return { pizzas: pizzas, current: pizzas.telegraph }
+  return { pizzas: pizzas }
 }
 
 export default IndexPage;

@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import { AppProps } from 'next/app';
+import { Global } from '@emotion/core';
 import { ThemeProvider } from 'theme-ui';
 import theme from '../theme';
-import { Global } from '@emotion/core';
 
 const App: React.FC<AppProps> = ({Component, pageProps}) => {
   return (
