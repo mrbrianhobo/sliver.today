@@ -35,7 +35,8 @@ const PizzaCard: React.FC<{
       </Heading>
 			<EmojiGrid emojis={selected.emojis}/>
 			<Heading
-				as="h4"
+        as="h4"
+        mb={"4px"}
 				sx={{
 					fontWeight: 600,
 				}}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Flex, Text } from "theme-ui";
+import { motion } from "framer-motion";
 import { Emoji } from '../interfaces';
 
 type EmojiProps = {
@@ -21,13 +22,19 @@ const EmojiBox: React.FC<{
         alignItems: "center"
       }} 
     >
-      <Text
-        sx={{
-          fontSize: "30px"
-        }}
+      <motion.div
+        whileHover={{ scale: 1.2 }}
+        whileTap={{ scale: 1 }}
       >
-        {emoji.emoji}
-      </Text>
+        <Text
+          sx={{
+            fontSize: "30px",
+            cursor: "pointer"
+          }}
+        >
+          {emoji.emoji}
+        </Text>
+      </motion.div>
     </Flex>
   )
 }
