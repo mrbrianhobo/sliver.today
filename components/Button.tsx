@@ -21,6 +21,7 @@ const Button: React.FC<{
           fontWeight: 600,
           outline: 0,
           cursor: "pointer",
+          userSelect: "none",
         }}
       >
         {location}

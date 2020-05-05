@@ -32,6 +32,7 @@ const EmojiBox: React.FC<{
           sx={{
             fontSize: isSingle ? "48px" : "30px",
             cursor: "pointer",
+            userSelect: "none",
           }}
         >
           {emoji !== undefined ? emoji.emoji : null}
