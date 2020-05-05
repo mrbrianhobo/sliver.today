@@ -20,6 +20,7 @@ const Button: React.FC<{
           fontFamily: "Inconsolata",
           fontWeight: 600,
           outline: 0,
+          cursor: "pointer",
         }}
       >
         {location}
