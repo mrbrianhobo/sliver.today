@@ -1,25 +1,27 @@
 import React from 'react';
 import { Flex, Text } from "theme-ui";
 import { motion } from "framer-motion";
-import { Emoji } from '../interfaces';
+import { Error, Emoji } from '../interfaces';
 
 type EmojiProps = {
   emojis: Emoji[]
 }
 
 const EmojiBox: React.FC<{
-  emoji: Emoji
-}> = ({ emoji }) => {
+  emoji?: Emoji;
+  isSingle?: boolean;
+}> = ({ emoji, isSingle }) => {
   return (
     <Flex
       m={"4px"}
       sx={{
-        height: "80px",
-        width: "80px",
+        height: isSingle ? "120px" : "80px",
+        width: isSingle ? "120px" : "80px",
         background: "#F3F3F3",
         borderRadius: "24px",
         justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center",
+        visibility: emoji !== undefined ? "visible" : "hidden",
       }} 
     >
       <motion.div
@@ -28,13 +30,41 @@ const EmojiBox: React.FC<{
       >
         <Text
           sx={{
-            fontSize: "30px",
+            fontSize: isSingle ? "48px" : "30px",
             cursor: "pointer"
           }}
         >
-          {emoji.emoji}
+          {emoji !== undefined ? emoji.emoji : null}
         </Text>
       </motion.div>
+    </Flex>
+  )
+}
+
+const EmojiList: React.FC<EmojiProps> = ({ emojis }) => {
+  return (
+    <div>
+      <Flex>
+        <EmojiBox emoji={emojis[0]} />
+        <EmojiBox emoji={emojis[1]} />
+      </Flex>
+      <Flex>
+        <EmojiBox emoji={emojis[2]} />
+        <EmojiBox emoji={emojis[3]} />
+      </Flex>
+    </div>
+  )
+}
+
+const EmojiSingle: React.FC<EmojiProps> = ({ emojis }) => {
+  return (
+    <Flex
+      p={24}
+    >
+      {emojis.length == 0 
+        ? <EmojiBox emoji={Error} isSingle={true} />
+        : <EmojiBox emoji={emojis[0]} isSingle={true} />
+      }
     </Flex>
   )
 }
@@ -49,15 +79,10 @@ const EmojiGrid: React.FC<EmojiProps> = ({ emojis }) => {
         alignItems: "center"
       }}
     > 
-      <Flex>
-        <EmojiBox emoji={emojis[0]} />
-        <EmojiBox emoji={emojis[1]} />
-      </Flex>
-      <Flex>
-        <EmojiBox emoji={emojis[2]} />
-        <EmojiBox emoji={emojis[3]} />
-      </Flex>
-      
+      {emojis.length <= 1 
+        ? <EmojiSingle emojis={emojis} /> 
+        : <EmojiList emojis={emojis} /> 
+      }
     </Flex>
   )
 }

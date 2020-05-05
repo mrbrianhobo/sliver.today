@@ -1,11 +1,11 @@
 import React from 'react';
 import { Card, Text, Heading } from 'theme-ui';
-import { Pizza } from '../interfaces';
+import { Pizza, Error } from '../interfaces';
 import { getDate } from '../utils/getDate';
 import EmojiGrid from './EmojiGrid';
 
 const PizzaCard: React.FC<{
-	selected: Pizza
+	selected: Pizza;
 }> = ({ selected }) => {
   return (
 		<Card
@@ -44,7 +44,7 @@ const PizzaCard: React.FC<{
 				🍕 Today's Pizza
 			</Heading>
 			<Text>
-				{selected.menu}
+				{selected.emojis.length == 0 ? Error.ingredient : selected.menu }
   		</Text>
 		</Card>
 	)

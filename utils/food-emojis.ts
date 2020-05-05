@@ -17,7 +17,7 @@ export default [
   },
   {
     emoji: '🧀',
-    keywords: ["Cheese Blend", " Asiago Fresh Cheese", "Pecorino Cheese", "Parmesan Cheese", "Gruyere Cheese"]
+    keywords: ["Cheese Blend", " Asiago Fresh Cheese", "Pecorino Cheese", "Parmesan Cheese", "Gruyere Cheese", "Cheddar Cheese"]
   },
   {
     emoji: '🍄',

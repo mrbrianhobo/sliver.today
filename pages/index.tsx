@@ -59,7 +59,7 @@ IndexPage.getInitialProps = async () => {
   const res = await fetch('https://api.sliver.today/');
   const json = await res.json();
 
-  // const json = JSON.parse(`{"pizzas":[{"location":"telegraph","date":"2020-04-29","pizza":"Wild Mushrooms (Shitake, Chanterelle, Portabella, Cremini Mushrooms), Mozzarella, Asiago Fresh, Green Scallons, Fresh Herbs, Infused Chanterelle Mushrooms, and Garlic Olive Oil."},{"location":"shattuck","date":"2020-04-29","pizza":"Roasted Yukon Gold Potatoes, Baby Spinach Mixed Caramelized Onions, Mozzarella, Aged Sharp Cheddar Cheese, Fresh Herbs, Infused Thyme Garlic Olive Oil."},{"location":"broadway","date":"2020-04-29","pizza":"Assorted Organic heirloom Tomatoes, Cremini Mushrooms, Mozzarella, French Feta Cheese. Topped With Avocado Spread"}]}`);
+  // const json = JSON.parse(`{"pizzas":[{"location":"telegraph","date":"2020-05-04","pizza":"Roma Tomatoes, Cremini Mushrooms, Mozzarella, French Feta Cheese, Topped With Avocado Spread."},{"location":"shattuck","date":"2020-05-04","pizza":"Roasted Yukon Gold Potatoes."},{"location":"broadway","date":"2020-05-04","pizza":""}]}`);
 
   const telegraphMenu = json.pizzas[0].pizza;
   const shattuckMenu = json.pizzas[1].pizza;
