@@ -25,13 +25,13 @@ const EmojiBox: React.FC<{
       }} 
     >
       <motion.div
-        whileHover={{ scale: 1.2 }}
-        whileTap={{ scale: 1 }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.85 }}
       >
         <Text
           sx={{
             fontSize: isSingle ? "48px" : "30px",
-            cursor: "pointer"
+            cursor: "pointer",
           }}
         >
           {emoji !== undefined ? emoji.emoji : null}
