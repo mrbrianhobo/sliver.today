@@ -11,6 +11,31 @@ const App: React.FC<AppProps> = ({Component, pageProps}) => {
       <Head>
         <title lang="en">sliver.today</title>
         <link rel="icon" type="image/png" href="/pizza.png" />
+
+        <meta name="title" content="🍕 sliver.today" />
+        <meta
+          name="description"
+          content="A simple app to stay updated with Sliver Pizzeria's daily menu."
+        />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://sliver.today" />
+        <meta property="og:title" content="🍕 sliver.today" />
+        <meta
+          property="og:description"
+          content="A simple app to stay updated with Sliver Pizzeria's daily menu."
+        />
+        <meta property="og:image" content="/og-pizza.png" />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://sliver.today" />
+        <meta property="twitter:title" content="🍕 sliver.today" />
+        <meta
+          property="twitter:description"
+          content="A simple app to stay updated with Sliver Pizzeria's daily menu."
+        />
+        <meta property="twitter:image" content="/og-pizza.png" />
+        
         <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"></link>
       </Head>
       <ThemeProvider theme={theme}>
