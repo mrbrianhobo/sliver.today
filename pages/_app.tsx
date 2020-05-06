@@ -14,8 +14,8 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
       GA.initGA();
       (window as any).GA_INITIALIZED = true;
     }
-    GA.logPageView()
-});
+    GA.logPageView();
+  });
   
   return (
     <div>
