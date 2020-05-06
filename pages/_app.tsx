@@ -1,11 +1,20 @@
+import React, { useEffect } from 'react';
 import Head from 'next/head';
 import { AppProps } from 'next/app';
 import { Global } from '@emotion/core';
 import { ThemeProvider } from 'theme-ui';
+import * as GoogleAnalytics from '../utils/analytics';
 import theme from '../theme';
 import 'tippy.js/dist/tippy.css';
 
-const App: React.FC<AppProps> = ({Component, pageProps}) => {
+GoogleAnalytics.initGA();
+
+const App: React.FC<AppProps> = ({ Component, pageProps }) => {
+
+  useEffect(() => {
+    GoogleAnalytics.logPageView();
+  }, []);
+  
   return (
     <div>
       <Head>
