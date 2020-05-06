@@ -1,11 +1,12 @@
 import { Emoji } from '../interfaces';
 import emojiList from './food-emojis';
 
-const regexps = [/(,\s+(and)\s+)/, /([\.,]\s+(Topped With)\s+)/, /(\s+(Topped with)\s+)/];
+const regexps = [/\(([^\)]+)\)/, /(,\s+(and)\s+)/, /([\.,]\s+(Topped With)\s+)/, /(\s+(Topped with)\s+)/, /(\.)/];
+const regexpsReplace = ['', ',', ',', ',', '']
 
 function transform(menu: string): string[] {
   for (let i = 0; i < regexps.length; i++) {
-    menu = menu.replace(regexps[i], ',');
+    menu = menu.replace(regexps[i], regexpsReplace[i]);
   }
 
   return menu.split(',').map(el => el.trim());
