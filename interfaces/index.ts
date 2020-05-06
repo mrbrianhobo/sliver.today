@@ -24,5 +24,5 @@ export type Emoji = {
 
 export const Error: Emoji = {
   emoji: '⚠️',
-  ingredient: "ERROR: Could not fetch menu from Sliver Pizzeria",
+  ingredient: "ERROR: Could not fetch Sliver menu",
 }

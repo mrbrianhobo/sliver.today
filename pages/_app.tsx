@@ -3,6 +3,7 @@ import { AppProps } from 'next/app';
 import { Global } from '@emotion/core';
 import { ThemeProvider } from 'theme-ui';
 import theme from '../theme';
+import 'tippy.js/dist/tippy.css';
 
 const App: React.FC<AppProps> = ({Component, pageProps}) => {
   return (

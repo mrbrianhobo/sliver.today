@@ -1,6 +1,7 @@
 import React from 'react';
-import { Flex, Text } from "theme-ui";
-import { motion } from "framer-motion";
+import Tippy from '@tippyjs/react';
+import { Flex, Text } from 'theme-ui';
+import { motion } from 'framer-motion';
 import { Error, Emoji } from '../interfaces';
 
 type EmojiProps = {
@@ -24,20 +25,27 @@ const EmojiBox: React.FC<{
         visibility: emoji !== undefined ? "visible" : "hidden",
       }} 
     >
-      <motion.div
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.85 }}
-      >
-        <Text
-          sx={{
-            fontSize: isSingle ? "48px" : "30px",
-            cursor: "pointer",
-            userSelect: "none",
-          }}
-        >
-          {emoji !== undefined ? emoji.emoji : null}
-        </Text>
-      </motion.div>
+      { emoji !== undefined 
+        ? <motion.div
+            whileHover={{ scale: 1.15 }}
+            whileTap={{ scale: 0.85 }}
+          >
+            <Tippy
+              content={emoji.ingredient}
+            >
+              <Text
+                sx={{
+                  fontSize: isSingle ? "48px" : "30px",
+                  cursor: "pointer",
+                  userSelect: "none",
+                }}
+              >
+                {emoji.emoji}
+              </Text>
+            </Tippy>
+          </motion.div>
+        : null
+      }
     </Flex>
   )
 }
