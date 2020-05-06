@@ -25,7 +25,7 @@ const App: React.FC<AppProps> = ({Component, pageProps}) => {
           property="og:description"
           content="A simple app to stay updated with Sliver Pizzeria's daily menu."
         />
-        <meta property="og:image" content="/og-pizza.png" />
+        <meta property="og:image" content="https://sliver.today/cover.png" />
 
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://sliver.today" />
@@ -34,7 +34,7 @@ const App: React.FC<AppProps> = ({Component, pageProps}) => {
           property="twitter:description"
           content="A simple app to stay updated with Sliver Pizzeria's daily menu."
         />
-        <meta property="twitter:image" content="/og-pizza.png" />
+        <meta property="twitter:image" content="https://sliver.today/cover.png" />
         
         <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"></link>
       </Head>
