@@ -3,17 +3,19 @@ import Head from 'next/head';
 import { AppProps } from 'next/app';
 import { Global } from '@emotion/core';
 import { ThemeProvider } from 'theme-ui';
-import * as GoogleAnalytics from '../utils/analytics';
+import * as GA from '../utils/analytics';
 import theme from '../theme';
 import 'tippy.js/dist/tippy.css';
-
-GoogleAnalytics.initGA();
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
 
   useEffect(() => {
-    GoogleAnalytics.logPageView();
-  }, []);
+    if (!(window as any).GA_INITIALIZED) {
+      GA.initGA();
+      (window as any).GA_INITIALIZED = true;
+    }
+    GA.logPageView()
+});
   
   return (
     <div>
