@@ -7,7 +7,9 @@ import { motion } from 'framer-motion';
 const Button: React.FC<{
   onClick: any;
   location: string;
-}> = ({ onClick, location }) => {
+  active: string;
+}> = ({ onClick, location, active}) => {
+  const isActive = location === active;
   return (
     <motion.div
       whileHover={{ scale: 1.05 }}
@@ -15,6 +17,7 @@ const Button: React.FC<{
     >
       <ThemeButton
         onClick={() => onClick(location)}
+        variant={isActive ? "active" : "primary"}
         m={"8px"}
         sx={{
           fontFamily: "Inconsolata",

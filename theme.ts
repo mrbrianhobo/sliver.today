@@ -16,7 +16,23 @@ export default {
   colors: {
     text: '#000',
     background: '#fff',
-    primary: '#33e',
+    primary: '#5183f5',
+  },
+  buttons: {
+    primary: {
+      border: '2px dashed #5183f5',
+      color: '#5183f5',
+      bg: '#fff',
+      '&:hover': {
+        color: '#fff',
+        bg: '#5183f5',
+      }
+    },
+    active: {
+      border: '2px dashed #5183f5',
+      color: '#fff',
+      bg: '#5183f5',
+    }
   },
   cards: {
     primary: {

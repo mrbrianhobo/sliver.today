@@ -48,6 +48,7 @@ const IndexPage: NextPage<Props> = ({ pizzas }) => {
       >
         <ButtonGroup 
           onClick={location => updatePizza(location)}
+          selected={pizza}
         />
       </Flex>
       <Footer />
