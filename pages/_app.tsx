@@ -3,9 +3,16 @@ import Head from 'next/head';
 import { AppProps } from 'next/app';
 import { Global } from '@emotion/core';
 import { ThemeProvider } from 'theme-ui';
+import { MDXProvider } from '@mdx-js/react'
+import CodeBlock from '../components/CodeBlock';
 import * as GA from '../utils/analytics';
 import theme from '../theme';
 import 'tippy.js/dist/tippy.css';
+
+const components = {
+  pre: (props: any) => <div {...props} />,
+  code: (props: any) => <CodeBlock {...props} />
+}
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
 
@@ -59,10 +66,23 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
               fontFamily: theme.fonts.body,
               fontWeight: theme.fontWeights.body,
               margin: 0,
+            },
+            pre: {
+              borderRadius: "8px",
+              overflow: "scroll",
+            },
+            code: {
+              fontWeight: "bold",
+              backgroundColor: "#eeeefa",
+              color: "#5183f5",
+              padding: "0.15rem 0.4rem",
+              borderRadius: "0.25rem",
             }
           })}
         />
-          <Component {...pageProps} />
+          <MDXProvider components={components}>
+            <Component {...pageProps} />
+          </MDXProvider>
       </ThemeProvider>
     </div>
   )

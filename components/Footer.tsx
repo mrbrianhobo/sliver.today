@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
       }}
     >
       <footer>
-        made in quarantine by <a href="https://brianho.io/" target="_blank">Brian Ho</a> 😷
+        made in quarantine by <a href="http://brianho.io/" target="_blank">Brian Ho</a> 😷
       </footer>
     </Flex>
     

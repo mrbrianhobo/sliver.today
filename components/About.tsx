@@ -1,6 +1,6 @@
 import React from 'react';
-import AboutMDX from './mdx/about.mdx';
 import { Box } from 'theme-ui';
+import AboutMDX from './mdx/about.mdx';
 
 const About: React.FC = () => {
   return (

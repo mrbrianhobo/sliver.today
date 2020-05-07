@@ -26,3 +26,11 @@ export const Error: Emoji = {
   emoji: '⚠️',
   ingredient: "ERROR: Could not fetch Sliver menu",
 }
+
+export const Queries = {
+  default: 'https://api.sliver.today',
+  telegraph: 'https://api.sliver.today/?location=telegraph',
+  shattuck: 'https://api.sliver.today/?location=shattuck',
+  broadway: 'https://api.sliver.today/?location=broadway',
+  all: 'https://api.sliver.today/?location=all',
+}

@@ -12,6 +12,7 @@ import Footer from '../components/Footer';
 
 type Props = {
   pizzas: Locations
+  results: string
 }
 
 const IndexPage: NextPage<Props> = ({ pizzas }) => {
@@ -52,6 +53,9 @@ const IndexPage: NextPage<Props> = ({ pizzas }) => {
           selected={pizza}
         />
       </Flex>
+      {/* <pre>
+        {results}
+      </pre> */}
       <Flex
         sx={{
           justifyContent: 'center'
@@ -67,6 +71,7 @@ const IndexPage: NextPage<Props> = ({ pizzas }) => {
 IndexPage.getInitialProps = async () => {
   const res = await fetch('https://api.sliver.today/');
   const json = await res.json();
+  const results = JSON.stringify(json, undefined, 2);
 
   // const json = JSON.parse(`{"pizzas":[{"location":"telegraph","date":"2020-05-04","pizza":"Roma Tomatoes, Cremini Mushrooms, Mozzarella, French Feta Cheese. "},{"location":"shattuck","date":"2020-05-04","pizza":"Roasted Yukon Gold Potatoes."},{"location":"broadway","date":"2020-05-04","pizza":""}]}`);
 
@@ -98,7 +103,7 @@ IndexPage.getInitialProps = async () => {
     broadway: broadway,
   }
 
-  return { pizzas: pizzas }
+  return { pizzas: pizzas, results: results }
 }
 
 export default IndexPage;
