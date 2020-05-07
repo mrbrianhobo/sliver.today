@@ -1,3 +1,5 @@
+import { GetCodeBlockString } from '../CodeBlock';
+
 ## ℹ️ About
 
 [api.sliver.today](http://api.sliver.today) is a free REST API for retrieving Sliver Pizzeria's pizza of the day. 
@@ -8,33 +10,11 @@
 
 Retrieves a list of pizza menu objects.
 
-```jsx
-GET https://api.sliver.today
-```
+<GetCodeBlockString code={props.request} language={"javascript"} />
 
 ### Response
 
-```json
-{
-  "pizzas": [
-    {
-      "location": "telegraph",
-      "date": "2020-05-06",
-      "pizza": "Corn, Roasted Yukon Gold Potatoes, Baby Spinach Mixed with Caramelized Onions, Mozzarella, French Feta Cheese, with Avocado Spread."
-    },
-    {
-      "location": "shattuck",
-      "date": "2020-05-06",
-      "pizza": "Wild Mushrooms (Shitake, Chanterelle, Portabella, Cremini Mushrooms), Mozzarella, Asiago Fresh, Green Scallons, Fresh Herbs, Infused Chanterelle Mushrooms, and Garlic Olive Oil."
-    },
-    {
-      "location": "broadway",
-      "date": "2020-05-06",
-      "pizza": "Roasted Yukon Gold Potatoes, Baby Heirloom Tomatoes, Baby Spinach Mixed with Caramelized Onions, Mozzarella, Pecorino Cheese mixed with Fresh Herbs, and Infused Sage Garlic Oil."
-    }
-  ]
-}
-```
+<GetCodeBlockString code={props.response} language={"json"} />
 
 ### Query Parameters
 

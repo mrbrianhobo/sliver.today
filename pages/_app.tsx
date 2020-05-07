@@ -11,7 +11,8 @@ import 'tippy.js/dist/tippy.css';
 
 const components = {
   pre: (props: any) => <div {...props} />,
-  code: (props: any) => <CodeBlock {...props} />
+  code: (props: any) => <CodeBlock {...props} />,
+  a: (props: any) => <a {...props} target="_blank" />
 }
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {

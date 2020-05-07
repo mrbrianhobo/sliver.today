@@ -4,6 +4,13 @@ import theme from 'prism-react-renderer/themes/github'
 
 defaultProps.theme = theme;
 
+export const GetCodeBlockString: React.FC<{
+  code: string;
+  language: string;
+}> = ({ code, language }) => {
+  return <CodeBlock className={language}>{code}</CodeBlock>;
+}
+
 const CodeBlock: React.FC<{
   children: any;
   className: string;

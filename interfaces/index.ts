@@ -28,9 +28,9 @@ export const Error: Emoji = {
 }
 
 export const Queries = {
-  default: 'https://api.sliver.today',
-  telegraph: 'https://api.sliver.today/?location=telegraph',
-  shattuck: 'https://api.sliver.today/?location=shattuck',
-  broadway: 'https://api.sliver.today/?location=broadway',
-  all: 'https://api.sliver.today/?location=all',
+  default: 'GET https://api.sliver.today',
+  telegraph: 'GET https://api.sliver.today/?location=telegraph',
+  shattuck: 'GET https://api.sliver.today/?location=shattuck',
+  broadway: 'GET https://api.sliver.today/?location=broadway',
+  all: 'GET https://api.sliver.today/?location=all',
 }

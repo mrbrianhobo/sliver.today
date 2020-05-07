@@ -2,7 +2,7 @@ import fetch from 'isomorphic-unfetch';
 import { useState } from 'react';
 import { NextPage } from 'next';
 import { Flex } from 'theme-ui';
-import { Pizza, Locations, Location } from '../interfaces';
+import { Pizza, Locations, Location, Queries } from '../interfaces';
 import { emojify } from '../utils/emojify';
 import NavBar from '../components/NavBar';
 import PizzaCard from '../components/PizzaCard';
@@ -15,8 +15,10 @@ type Props = {
   results: string
 }
 
-const IndexPage: NextPage<Props> = ({ pizzas }) => {
+const IndexPage: NextPage<Props> = ({ pizzas, results }) => {
   const [pizza, setPizza] = useState(pizzas.telegraph);
+  const [request] = useState(Queries.default);
+  const [response] = useState(results);
 
   const updatePizza = (location: string) => {
     switch (location) {
@@ -53,15 +55,12 @@ const IndexPage: NextPage<Props> = ({ pizzas }) => {
           selected={pizza}
         />
       </Flex>
-      {/* <pre>
-        {results}
-      </pre> */}
       <Flex
         sx={{
           justifyContent: 'center'
         }}
       >
-        <About />
+        <About request={request} response={response} />
       </Flex>
       <Footer />
     </div>
