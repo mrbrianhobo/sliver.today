@@ -7,6 +7,7 @@ import { emojify } from '../utils/emojify';
 import NavBar from '../components/NavBar';
 import PizzaCard from '../components/PizzaCard';
 import ButtonGroup from '../components/ButtonGroup';
+import About from '../components/About';
 import Footer from '../components/Footer';
 
 type Props = {
@@ -50,6 +51,13 @@ const IndexPage: NextPage<Props> = ({ pizzas }) => {
           onClick={location => updatePizza(location)}
           selected={pizza}
         />
+      </Flex>
+      <Flex
+        sx={{
+          justifyContent: 'center'
+        }}
+      >
+        <About />
       </Flex>
       <Footer />
     </div>

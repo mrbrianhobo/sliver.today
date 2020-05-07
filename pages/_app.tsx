@@ -49,10 +49,13 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
         
         <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"></link>
       </Head>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider 
+        theme={theme}
+      >
         <Global
           styles={theme => ({
             body: {
+              position: "relative",
               fontFamily: theme.fonts.body,
               fontWeight: theme.fontWeights.body,
               margin: 0,

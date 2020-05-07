@@ -5,16 +5,17 @@ const Footer: React.FC = () => {
   return (
     <Flex
       sx={{
-        position: "fixed",
+        position: "absolute",
         bottom: 0,
         left: 0,
         right: 0,
-        height: "50px",
+        height: "80px",
         justifyContent: "center",
+        alignItems: "center",
       }}
     >
       <footer>
-        made in quarantine by brian ho 😷
+        made in quarantine by <a href="https://brianho.io/" target="_blank">Brian Ho</a> 😷
       </footer>
     </Flex>
     

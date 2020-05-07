@@ -9,6 +9,9 @@
   },
   "dependencies": {
     "@emotion/core": "^10.0.28",
+    "@mdx-js/loader": "^1.6.1",
+    "@next/mdx": "^9.3.6",
+    "@theme-ui/prism": "^0.3.0",
     "@tippyjs/react": "^4.0.2",
     "framer-motion": "^1.10.3",
     "isomorphic-unfetch": "3.0.0",
