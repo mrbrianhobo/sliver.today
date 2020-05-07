@@ -77,6 +77,20 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
               color: "#5183f5",
               padding: "0.15rem 0.4rem",
               borderRadius: "0.25rem",
+            },
+            a: {
+              fontWeight: "bold",
+              color: "rgb(81, 131, 245)",
+              borderBottom: "2px solid #e2eafd",
+              textDecoration: "none",
+              ":hover": {
+                color: "#2161f2",
+                background: "#f0f4fe",
+                borderBottom: "2px solid #2161f2",
+              },
+            },
+            p: {
+              lineHeight: "1.4",
             }
           })}
         />
