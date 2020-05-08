@@ -7,7 +7,7 @@ const NavBar: React.FC = () => {
       p={2}
       sx={{
         height: "65px",
-        border: "1px solid #DEDEDE",
+        borderBottom: "1px solid #DEDEDE",
         justifyContent: "center",
         alignItems: "center"
       }}

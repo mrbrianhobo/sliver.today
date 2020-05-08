@@ -4,8 +4,8 @@ import { AppProps } from 'next/app';
 import { Global } from '@emotion/core';
 import { ThemeProvider } from 'theme-ui';
 import { MDXProvider } from '@mdx-js/react'
-import CodeBlock from '../components/CodeBlock';
 import * as GA from '../utils/analytics';
+import CodeBlock from '../components/CodeBlock';
 import theme from '../theme';
 import 'tippy.js/dist/tippy.css';
 

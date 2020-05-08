@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Text, Heading } from 'theme-ui';
 import { Pizza, Error } from '../interfaces';
-import { getDate } from '../utils/getDate';
+import { getDate } from '../utils/date';
 import EmojiGrid from './EmojiGrid';
 
 const PizzaCard: React.FC<{

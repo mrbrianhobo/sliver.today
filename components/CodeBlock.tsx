@@ -1,6 +1,6 @@
 import React from 'react';
 import Highlight, { defaultProps, Language } from 'prism-react-renderer';
-import theme from 'prism-react-renderer/themes/github'
+import theme from 'prism-react-renderer/themes/github';
 
 defaultProps.theme = theme;
 
