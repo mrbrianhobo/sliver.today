@@ -13,7 +13,7 @@ const About: React.FC<{
       sx={{
         maxWidth: "720px",
         minWidth: "360px",
-        width: "80vw",
+        width: "90vw",
       }}
     >
       <AboutMDX request={request} response={response} />
