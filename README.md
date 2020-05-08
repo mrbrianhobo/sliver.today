@@ -1,62 +1,104 @@
-# TypeScript Next.js example
+# 🍕 sliver.today
 
-This is a really simple project that shows the usage of Next.js with TypeScript.
+## ℹ️ About
 
-## Deploy your own
+[api.sliver.today](http://api.sliver.today) is a free REST API for retrieving [Sliver Pizzeria](https://www.sliverpizzeria.com)'s pizza of the day. 
 
-Deploy the example using [ZEIT Now](https://zeit.co/now):
+## 👀 Demo
 
-[![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/import/project?template=https://github.com/zeit/next.js/tree/canary/examples/with-typescript)
+➡️ **[sliver.today](http://sliver.today)**
 
-## How to use it?
+## 🚀 Getting Started
 
-### Using `create-next-app`
-
-Execute [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+### Try it out!
 
 ```bash
-npm init next-app --example with-typescript with-typescript-app
-# or
-yarn create next-app --example with-typescript with-typescript-app
+# install dependencies and start development server
+$ yarn && yarn dev
+yarn install v1.22.0
+[1/4] 🔍  Resolving packages...
+success Already up-to-date.
+✨  Done in 0.35s.
+yarn run v1.22.0
+$ next
+[ wait ]  starting the development server ...
+[ info ]  waiting on http://localhost:3000 ...
+[ info ]  bundled successfully, waiting for typecheck results...
+[ ready ] compiled successfully - ready on http://localhost:3000
 ```
 
-### Download manually
+Now you can visit [http://localhost:3000](http://localhost:3000) and try out the frontend app!
 
-Download the example:
+### Deploy your own!
 
-```bash
-curl https://codeload.github.com/zeit/next.js/tar.gz/canary | tar -xz --strip=2 next.js-canary/examples/with-typescript
-cd with-typescript
+Deploy your own project with [Vercel](https://vercel.com/home).
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/mrbrianhobo/sliver.today)
+
+
+## ⚙️ Usage
+
+### Request
+
+Retrieves a list of pizza menu objects.
+
+```jsx
+GET https://api.sliver.today
 ```
 
-Install it and run:
+### Response
 
-```bash
-npm install
-npm run dev
-# or
-yarn
-yarn dev
+```json
+{
+  "pizzas": [
+    {
+      "location": "telegraph",
+      "date": "2020-05-06",
+      "pizza": "Corn, Roasted Yukon Gold Potatoes, Baby Spinach Mixed with Caramelized Onions, Mozzarella, French Feta Cheese, with Avocado Spread."
+    },
+    {
+      "location": "shattuck",
+      "date": "2020-05-06",
+      "pizza": "Wild Mushrooms (Shitake, Chanterelle, Portabella, Cremini Mushrooms), Mozzarella, Asiago Fresh, Green Scallons, Fresh Herbs, Infused Chanterelle Mushrooms, and Garlic Olive Oil."
+    },
+    {
+      "location": "broadway",
+      "date": "2020-05-06",
+      "pizza": "Roasted Yukon Gold Potatoes, Baby Heirloom Tomatoes, Baby Spinach Mixed with Caramelized Onions, Mozzarella, Pecorino Cheese mixed with Fresh Herbs, and Infused Sage Garlic Oil."
+    }
+  ]
+}
 ```
 
-Deploy it to the cloud with [ZEIT Now](https://zeit.co/import?filter=next.js&utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+### Query Parameters
 
-## Notes
+`location?: string`
 
-This example shows how to integrate the TypeScript type system into Next.js. Since TypeScript is supported out of the box with Next.js, all we have to do is to install TypeScript.
+The location of the wanted pizza menu. Defaults to `all`. Supports `telegraph`, `shattuck`, `broadway` as parameters.
 
-```
-npm install --save-dev typescript
-```
+## 🤔 FAQ
 
-To enable TypeScript's features, we install the type declarations for React and Node.
+**Can I use this in my project?**
 
-```
-npm install --save-dev @types/react @types/react-dom @types/node
-```
+Yup! Do whatever you want with it! Let me know if you're thinking of making something cool with it! 😎
 
-When we run `next dev` the next time, Next.js will start looking for any `.ts` or `.tsx` files in our project and builds it. It even automatically creates a `tsconfig.json` file for our project with the recommended settings.
+**Is it open source? Can I contribute?**
 
-Next.js has built-in TypeScript declarations, so we'll get autocompletion for Next.js' modules straight away.
+Yes! Checkout my spaghetti code on Github and submit issues or bugs. 🤖[API](https://github.com/mrbrianhobo/api.sliver.today) 👨‍💻[Site](https://github.com/mrbrianhobo/sliver.today)
 
-A `type-check` script is also added to `package.json`, which runs TypeScript's `tsc` CLI in `noEmit` mode to run type-checking separately. You can then include this, for example, in your `test` scripts.
+**What else do you want to do with this?** 
+
+I'm thinking about making this into a Slackbot/Discord Bot/Twitter Bot. It would also be pretty cool to index all the past pizzas that Sliver has served. 
+
+**What did you use to make this?**
+
+Backend API: Golang + [Colly](http://go-colly.org) (🚀deployed on [Google Cloud Run](https://cloud.google.com/run))  
+Frontend: Typescript + [Next.js](https://nextjs.org) + [MDX](https://mdxjs.com) (🎨styled with [Theme-UI](https://theme-ui.com) + [Emotion](https://emotion.sh))
+
+**Why did you make this?**
+
+IDK. I really like Sliver. And I was bored. Really bored. 😴
+
+## 📝 License
+
+MIT Licensed.
