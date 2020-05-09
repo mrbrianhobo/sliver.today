@@ -3,9 +3,10 @@ import { Box } from 'theme-ui';
 import AboutMDX from './mdx/about.mdx';
 
 const About: React.FC<{
+  onChange: (query: string) => void;
   request: string;
   response: string;
-}> = ({ request, response }) => {
+}> = ({ onChange, request, response }) => {
   return (
     <Box 
       mb={"80px"}
@@ -16,7 +17,11 @@ const About: React.FC<{
         width: "90vw",
       }}
     >
-      <AboutMDX request={request} response={response} />
+      <AboutMDX
+        onChange={onChange}
+        request={request} 
+        response={response} 
+      />
     </Box>
   )
 }

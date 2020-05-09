@@ -2,8 +2,9 @@ import fetch from 'isomorphic-unfetch';
 import { useState } from 'react';
 import { NextPage } from 'next';
 import { Flex } from 'theme-ui';
-import { Pizza, Locations, Location, Queries } from '../interfaces';
+import { Pizza, Locations, Location, Queries, Responses } from '../interfaces';
 import { emojify } from '../utils/emojify';
+import { parseJSON } from '../utils/parse';
 import NavBar from '../components/NavBar';
 import PizzaCard from '../components/PizzaCard';
 import ButtonGroup from '../components/ButtonGroup';
@@ -12,13 +13,13 @@ import Footer from '../components/Footer';
 
 type Props = {
   pizzas: Locations
-  results: string
+  results: Responses
 }
 
 const IndexPage: NextPage<Props> = ({ pizzas, results }) => {
   const [pizza, setPizza] = useState(pizzas.telegraph);
-  const [request] = useState(Queries.default);
-  const [response] = useState(results);
+  const [request, setRequest] = useState(Queries.default);
+  const [response, setResponse] = useState(results.default);
 
   const updatePizza = (location: string) => {
     switch (location) {
@@ -30,6 +31,30 @@ const IndexPage: NextPage<Props> = ({ pizzas, results }) => {
         break;
       case Location.Broadway:
         setPizza(pizzas.broadway);
+    }
+  }
+
+  const updateQuery = (query: string) => {
+    switch (query) {
+      case Queries.default:
+        setRequest(Queries.default);
+        setResponse(results.default);
+        break;
+      case Queries.telegraph:
+        setRequest(Queries.telegraph);
+        setResponse(results.telegraph);
+        break;
+      case Queries.shattuck:
+        setRequest(Queries.shattuck);
+        setResponse(results.shattuck);
+        break;
+      case Queries.broadway:
+        setRequest(Queries.broadway);
+        setResponse(results.broadway);
+        break;
+      case Queries.all:
+        setRequest(Queries.all);
+        setResponse(results.all);
     }
   }
 
@@ -60,7 +85,11 @@ const IndexPage: NextPage<Props> = ({ pizzas, results }) => {
           justifyContent: 'center'
         }}
       >
-        <About request={request} response={response} />
+        <About
+          onChange={query => updateQuery(query)}
+          request={request} 
+          response={response} 
+        />
       </Flex>
       <Footer />
     </div>
@@ -70,7 +99,7 @@ const IndexPage: NextPage<Props> = ({ pizzas, results }) => {
 IndexPage.getInitialProps = async () => {
   const res = await fetch('https://api.sliver.today/');
   const json = await res.json();
-  const results = JSON.stringify(json, undefined, 2);
+  const results = parseJSON(json);
 
   // const json = JSON.parse(`{"pizzas":[{"location":"telegraph","date":"2020-05-04","pizza":"Roma Tomatoes, Cremini Mushrooms, Mozzarella, French Feta Cheese. "},{"location":"shattuck","date":"2020-05-04","pizza":"Roasted Yukon Gold Potatoes."},{"location":"broadway","date":"2020-05-04","pizza":""}]}`);
 

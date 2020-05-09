@@ -34,3 +34,11 @@ export const Queries = {
   broadway: 'GET https://api.sliver.today/?location=broadway',
   all: 'GET https://api.sliver.today/?location=all',
 }
+
+export type Responses = {
+  default: string,
+  telegraph: string,
+  shattuck: string,
+  broadway: string,
+  all: string,
+}
