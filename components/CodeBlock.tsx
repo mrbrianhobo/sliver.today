@@ -1,8 +1,8 @@
 import React from 'react';
+import { useColorMode } from 'theme-ui';
 import Highlight, { defaultProps, Language } from 'prism-react-renderer';
-import theme from 'prism-react-renderer/themes/github';
-
-defaultProps.theme = theme;
+import LightTheme from 'prism-react-renderer/themes/github';
+import DarkTheme from 'prism-react-renderer/themes/palenight';
 
 export const GetCodeBlockString: React.FC<{
   code: string;
@@ -15,6 +15,9 @@ const CodeBlock: React.FC<{
   children: any;
   className: string;
 }> = ({ children, className }) => {
+  const colorMode: string = useColorMode()[0];
+  defaultProps.theme = colorMode === 'default' ? LightTheme : DarkTheme;
+
   const language = (className.replace(/language-/, '') as Language)
   const multiline = children.length > 80;
 
