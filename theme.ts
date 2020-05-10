@@ -19,12 +19,14 @@ export default {
     background: '#fff',
     primary: '#5183f5',
     secondary: '#718096',
-    muted: '#dedede',
+    muted: '#EDF2F7',
+    active: '#E2E8F0',
     modes: {
       dark: {
         text: '#fff',
         background: '#171923',
         muted: 'rgba(255, 255, 255, 0.08)',
+        active: 'rgba(255, 255, 255, 0.16)',
       }
     }
   },
@@ -36,13 +38,23 @@ export default {
       '&:hover': {
         color: '#fff',
         bg: 'primary',
-      }
+      },
+    },
+    secondary: {
+      color: '#fff',
+      bg: 'background',
+      '&:hover': {
+        bg: 'muted',
+      },
+      '&:active': {
+        bg: 'active',
+      },
     },
     active: {
       border: '2px dashed #5183f5',
       color: '#fff',
       bg: 'primary',
-    }
+    },
   },
   cards: {
     primary: {

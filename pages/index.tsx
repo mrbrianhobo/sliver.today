@@ -22,6 +22,10 @@ const IndexPage: NextPage<Props> = ({ pizzas, results }) => {
   const [request, setRequest] = useState(Queries.default);
   const [response, setResponse] = useState(results.default);
 
+  const toggleMode = () => {
+    setColorMode(colorMode === 'default' ? 'dark' : 'default');
+  }
+
   const updatePizza = (location: string) => {
     switch (location) {
       case Location.Telegraph:
@@ -61,13 +65,7 @@ const IndexPage: NextPage<Props> = ({ pizzas, results }) => {
 
   return (
     <div>
-      <NavBar />
-      <button
-        onClick={() => {
-          setColorMode(colorMode === 'default' ? 'dark' : 'default')
-        }}>
-        Toggle {colorMode === 'default' ? 'Dark' : 'Light'}
-      </button>
+      <NavBar onClick={() => toggleMode()} />
       <Flex
         m={16}
         p={16}

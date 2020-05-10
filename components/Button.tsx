@@ -2,6 +2,31 @@ import React from 'react';
 import { Button as ThemeButton } from 'theme-ui'
 import { motion } from 'framer-motion';
 
+export const EmojiButton: React.FC<{
+  onClick: any;
+  emoji: string;
+}> = ({ onClick, emoji }) => {
+  return (
+      <ThemeButton
+        onClick={() => onClick()}
+        variant={"secondary"}
+        sx={{
+          padding: "0 10px",
+          height: "40px",
+          width: "40px",
+          fontSize: "20px",
+          outline: 0,
+        }}
+      > 
+        <motion.div
+          whileTap={{ scale: 0.75 }}
+        >
+          {emoji}
+        </motion.div>
+      </ThemeButton>
+  )
+}
+
 const Button: React.FC<{
   onClick: any;
   location: string;
