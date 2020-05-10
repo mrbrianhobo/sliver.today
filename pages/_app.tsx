@@ -83,11 +83,13 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
               fontWeight: "bold",
               color: "rgb(81, 131, 245)",
               borderBottom: "2px solid #e2eafd",
+              padding: "0 0.1rem",
               textDecoration: "none",
               ":hover": {
                 color: "#2161f2",
                 background: "#f0f4fe",
                 borderBottom: "2px solid #2161f2",
+                borderRadius: "0.1rem",
               },
             },
             p: {

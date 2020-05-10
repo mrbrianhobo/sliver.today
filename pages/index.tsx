@@ -1,7 +1,7 @@
 import fetch from 'isomorphic-unfetch';
 import { useState } from 'react';
 import { NextPage } from 'next';
-import { Flex } from 'theme-ui';
+import { Flex, useColorMode } from 'theme-ui';
 import { Pizza, Locations, Location, Queries, Responses } from '../interfaces';
 import { emojify } from '../utils/emojify';
 import { parseJSON } from '../utils/parse';
@@ -17,6 +17,7 @@ type Props = {
 }
 
 const IndexPage: NextPage<Props> = ({ pizzas, results }) => {
+  const [colorMode, setColorMode] = useColorMode();
   const [pizza, setPizza] = useState(pizzas.telegraph);
   const [request, setRequest] = useState(Queries.default);
   const [response, setResponse] = useState(results.default);
@@ -61,6 +62,12 @@ const IndexPage: NextPage<Props> = ({ pizzas, results }) => {
   return (
     <div>
       <NavBar />
+      <button
+        onClick={() => {
+          setColorMode(colorMode === 'default' ? 'dark' : 'default')
+        }}>
+        Toggle {colorMode === 'default' ? 'Dark' : 'Light'}
+      </button>
       <Flex
         m={16}
         p={16}

@@ -11,6 +11,7 @@ const PizzaCard: React.FC<{
 		<Card
 			p={16}
 			sx={{
+        backgroundColor: "rgba(255, 255, 255, 0.08)",
 				width: "290px",
 				height: "425px",
 			}}
@@ -26,6 +27,7 @@ const PizzaCard: React.FC<{
       <Heading
         as="h4"
         sx={{
+          color: "secondary",
           fontFamily: "Inconsolata",
           fontWeight: 400,
           textAlign: "center"
@@ -43,7 +45,11 @@ const PizzaCard: React.FC<{
 			>
 				🍕 Today's Pizza
 			</Heading>
-			<Text>
+			<Text
+        sx={{
+          color: "secondary",
+        }}
+      >
 				{selected.emojis.length == 0 ? Error.ingredient : selected.menu }
   		</Text>
 		</Card>

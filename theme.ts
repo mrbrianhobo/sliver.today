@@ -17,21 +17,30 @@ export default {
     text: '#000',
     background: '#fff',
     primary: '#5183f5',
+    secondary: '#718096',
+    muted: '#dedede',
+    modes: {
+      dark: {
+        text: '#fff',
+        background: '#171923',
+        muted: 'rgba(255, 255, 255, 0.08)',
+      }
+    }
   },
   buttons: {
     primary: {
       border: '2px dashed #5183f5',
-      color: '#5183f5',
-      bg: '#fff',
+      color: 'primary',
+      bg: 'background',
       '&:hover': {
         color: '#fff',
-        bg: '#5183f5',
+        bg: 'primary',
       }
     },
     active: {
       border: '2px dashed #5183f5',
       color: '#fff',
-      bg: '#5183f5',
+      bg: 'primary',
     }
   },
   cards: {

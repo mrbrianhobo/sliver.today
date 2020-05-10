@@ -1,13 +1,14 @@
 import React from 'react';
-import { Flex, Heading } from 'theme-ui';
+import { Flex, Heading, useThemeUI } from 'theme-ui';
 
 const NavBar: React.FC = () => {
+  const { theme } = useThemeUI();
   return (
     <Flex 
       p={2}
       sx={{
         height: "65px",
-        borderBottom: "1px solid #DEDEDE",
+        borderBottom: `1px solid ${theme.colors?.muted}`,
         justifyContent: "center",
         alignItems: "center"
       }}
