@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button as ThemeButton } from 'theme-ui'
+import { Button as ThemeButton, Flex, Text } from 'theme-ui'
 import { motion } from 'framer-motion';
 
 export const EmojiButton: React.FC<{
@@ -7,23 +7,38 @@ export const EmojiButton: React.FC<{
   emoji: string;
 }> = ({ onClick, emoji }) => {
   return (
+    <Flex
+      sx={{
+        justifyContent: "center",
+        alignItems: "center",
+        height: "40px",
+        width: "40px",
+      }}
+    > 
       <ThemeButton
         onClick={() => onClick()}
         variant={"secondary"}
+        p={0}
         sx={{
-          padding: "0 0.5rem",
-          height: "40px",
-          width: "40px",
-          fontSize: "16pt",
+          width: "100%",
+          height: "100%",
           outline: 0,
+          cursor: "pointer",
         }}
-      > 
+      >
         <motion.div
           whileTap={{ scale: 0.75 }}
         >
-          {emoji}
+          <Text
+            sx={{
+              fontSize: "16pt",
+            }}
+          >
+            {emoji}
+          </Text>
         </motion.div>
       </ThemeButton>
+    </Flex>
   )
 }
 
