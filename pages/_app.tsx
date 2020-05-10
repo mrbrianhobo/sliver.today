@@ -74,9 +74,9 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
             },
             code: {
               fontWeight: "bold",
-              backgroundColor: "#eeeefa",
-              color: "#5183f5",
-              padding: "0.15rem 0.4rem",
+              backgroundColor: theme.colors.muted,
+              color: theme.colors.primary,
+              padding: "0.2rem 0.4rem",
               borderRadius: "0.25rem",
             },
             a: {

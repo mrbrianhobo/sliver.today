@@ -1,6 +1,6 @@
 import React from 'react';
 import Tippy from '@tippyjs/react';
-import { Flex, Text } from 'theme-ui';
+import { Flex, Text, useThemeUI } from 'theme-ui';
 import { motion } from 'framer-motion';
 import { Error, Emoji } from '../interfaces';
 
@@ -12,13 +12,15 @@ const EmojiBox: React.FC<{
   emoji?: Emoji;
   isSingle?: boolean;
 }> = ({ emoji, isSingle }) => {
+  const { theme } = useThemeUI();
+
   return (
     <Flex
       m={"4px"}
       sx={{
         height: isSingle ? "120px" : "80px",
         width: isSingle ? "120px" : "80px",
-        background: "#F3F3F3",
+        background: theme.colors?.muted,
         borderRadius: "24px",
         justifyContent: "center",
         alignItems: "center",
