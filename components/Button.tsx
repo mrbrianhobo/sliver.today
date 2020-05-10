@@ -11,10 +11,10 @@ export const EmojiButton: React.FC<{
         onClick={() => onClick()}
         variant={"secondary"}
         sx={{
-          padding: "0 10px",
+          padding: "0 0.5rem",
           height: "40px",
           width: "40px",
-          fontSize: "20px",
+          fontSize: "16pt",
           outline: 0,
         }}
       > 
