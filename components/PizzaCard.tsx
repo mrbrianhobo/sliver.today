@@ -13,10 +13,11 @@ const PizzaCard: React.FC<{
       sx={{
         backgroundColor: "rgba(255, 255, 255, 0.08)",
         width: "290px",
-        height: "425px",
+        height: "450px",
       }}
     >
       <Heading
+        pt={"8px"}
         sx={{
           fontWeight: 400,
           textAlign: "center"
