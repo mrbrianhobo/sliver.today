@@ -48,10 +48,11 @@ const PizzaCard: React.FC<{
       </Heading>
       <Text
         sx={{
+          lineHeight: selected.emojis.length === 0 ? 1.2 : "normal",
           color: "secondary",
         }}
       >
-        {selected.emojis.length == 0 ? Error.ingredient : selected.menu }
+        {selected.emojis.length === 0 ? Error.menu : selected.menu }
       </Text>
     </Card>
   )

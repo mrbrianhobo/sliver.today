@@ -41,7 +41,7 @@ export function emojify(menu: string): Emoji[] {
   const items = transform(menu);
 
   for (const item of items) {
-    if (emojis.length == 4) break;
+    if (emojis.length === 4) break;
     const emoji = matchItemToEmoji(item);
     if (emoji !== null) {
       emojis.push(emoji);

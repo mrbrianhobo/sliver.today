@@ -72,7 +72,7 @@ const EmojiSingle: React.FC<EmojiProps> = ({ emojis }) => {
     <Flex
       p={24}
     >
-      {emojis.length == 0 
+      {emojis.length === 0 
         ? <EmojiBox emoji={Error} isSingle={true} />
         : <EmojiBox emoji={emojis[0]} isSingle={true} />
       }
