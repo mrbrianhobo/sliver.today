@@ -1,8 +1,16 @@
 import { Emoji } from '../interfaces';
 import emojiList from './food-emojis';
 
-const regexps = [/\(([^\)]+)\)/, /(,\s+(and)\s+)/, /([\.,]\s+(Topped With)\s+)/, /(\s+(Topped with)\s+)/, /(\.)/];
-const regexpsReplace = ['', ',', ',', ',', '']
+const regexps = [
+  /\(([^\)]+)\)/, 
+  /(,\s+(and)\s+)/, 
+  /([\.,]\s+(Topped With)\s+)/,
+  /([\.,]\s+(Topped with)\s+)/,
+  /(\s+(Topped With)\s+)/, 
+  /(\s+(Topped with)\s+)/, 
+  /(\.)/
+];
+const regexpsReplace = ['', ',', ',', ',', ',', ',', '']
 
 function transform(menu: string): string[] {
   for (let i = 0; i < regexps.length; i++) {

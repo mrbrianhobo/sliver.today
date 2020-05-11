@@ -9,7 +9,7 @@ export default [
   },
   {
     emoji: '🍠',
-    keywords: ["Sweet Potatoes", "Yellow Squash"]
+    keywords: ["Sweet Potatoes", "Yellow Squash", "Summer Squash"]
   },
   {
     emoji: '🥔',
@@ -17,7 +17,7 @@ export default [
   },
   {
     emoji: '🧀',
-    keywords: ["Cheese Blend", " Asiago Fresh Cheese", "Pecorino Cheese", "Parmesan Cheese", "Gruyere Cheese", "Cheddar Cheese"]
+    keywords: ["Cheese Blend", "Asiago Fresh", "Asiago Fresh Cheese", "Pecorino Cheese", "Parmesan Cheese", "Gruyere Cheese", "Cheddar Cheese", "Campo Del Montalban Cheese"]
   },
   {
     emoji: '🍄',
