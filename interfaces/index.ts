@@ -26,7 +26,7 @@ export const Error = {
   emoji: '⚠️',
   ingredient: "ERROR: Could not fetch Sliver menu",
   menu: `Hey, it looks like we couldn't fetch the pizza from Sliver Pizzeria's website. 😓\n
-         Please try checking their website to see if they are open today? 🤷`
+         Please try checking their website to see if this location is open today! 🤷`
 }
 
 export const Queries = {
